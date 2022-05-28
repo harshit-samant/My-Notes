@@ -1,0 +1,114 @@
+.weather {
+  margin-top: 2vh;
+}
+
+.container {
+  max-width: 80vw;
+  padding: 2.5vh 5vw;
+  background-color: white;
+  border-radius: 20px;
+  margin: 4vh auto;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.city h3 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.city a {
+  position: absolute;
+}
+
+.row {
+  margin: 3vh 0;
+  display: flex;
+}
+
+.col {
+  flex: 50%;
+}
+
+
+.temp p {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.other-info p {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.rowBottom {
+  display: flex;
+  margin: 2vh 0;
+}
+
+.rowBottom .col2 {
+  flex: auto;
+  text-align: center;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 70px;
+}
+
+.search {
+  position: relative;
+  max-width: 30vw;
+  min-width: 280px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  font-family: "Montserrat", sans-serif;
+}
+
+.search input {
+  width: 90%;
+  height: 20px;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+}
+
+.search button {
+  position: absolute;
+  right: 0;
+  top: -4px;
+  background: #0aa1dd;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 56px;
+  height: 58px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.search button:hover {
+  opacity: 0.85;
+}
+
+.loading p {
+  text-align: center;
+  color: rgb(169, 174, 179);
+}
+
+.error p {
+  text-align: center;
+  color: rgb(249, 91, 91);
+}

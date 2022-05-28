@@ -1,0 +1,39 @@
+header {
+  background-color: #0aa1dd;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Montserrat", sans-serif;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  text-align: center;
+}
+
+.quote {
+  font-family: "Shadows Into Light Two", cursive;
+  padding: 0 10vw;
+  margin-top: 4vh;
+}
+
+.quote h2 {
+  color: #0aa1ddb7;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.quote p {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #0aa1dddf;
+  margin-top: 2vh;
+  font-style: italic;
+}

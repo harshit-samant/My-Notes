@@ -90,11 +90,13 @@ const Weather = () => {
           </form>
           {isLoading && !error && loading}
           {error && errorSection}
-          <div className="city">
-            <h3>{weather.name}</h3>
-          </div>
-          <div className="icon-container">
-            <img className="icon" src={weather.src} alt="icon"></img>
+          <div className="city-container">
+            <div className="city">
+              <h3>{weather.name ? weather.name : "----, --"}</h3>
+              <div className="icon-container">
+                <img className="icon" src={weather.src} alt="icon"></img>
+              </div>
+            </div>
           </div>
           <div className="row">
             <div className="col">
@@ -116,7 +118,7 @@ const Weather = () => {
                 src="./icons/wind.png"
                 alt="Wind Speed"
               ></img>
-              <p>{weather.wind}</p>
+              <p>{weather.wind ? weather.wind : "--"}</p>
             </div>
             <div className="col2">
               <img
@@ -124,7 +126,7 @@ const Weather = () => {
                 src="./icons/humidity.png"
                 alt="Humidity"
               ></img>
-              <p>{weather.humidity}</p>
+              <p>{weather.humidity ? weather.humidity : "--"}</p>
             </div>
             <div className="col2">
               <img
@@ -132,7 +134,7 @@ const Weather = () => {
                 src="./icons/longitude.png"
                 alt="Longitude"
               ></img>
-              <p>{weather.longitude}</p>
+              <p>{weather.longitude ? weather.longitude : "--"}</p>
             </div>
             <div className="col2">
               <img
@@ -140,7 +142,7 @@ const Weather = () => {
                 src="./icons/latitude.png"
                 alt="Latitude"
               ></img>
-              <p>{weather.latitude}</p>
+              <p>{weather.latitude ? weather.latitude : "--"}</p>
             </div>
             <div className="col2">
               <img
@@ -148,7 +150,7 @@ const Weather = () => {
                 src="./icons/pressure-gauge.png"
                 alt="Ground Pressure"
               ></img>
-              <p>{weather.pressure}</p>
+              <p>{weather.pressure ? weather.pressure : "--"}</p>
             </div>
           </div>
         </div>

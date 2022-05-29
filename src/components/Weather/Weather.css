@@ -1,5 +1,6 @@
 .weather {
   margin-top: 2vh;
+  padding: 0;
 }
 
 .container {
@@ -11,17 +12,80 @@
   box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* Search */
+.search {
+  position: relative;
+  max-width: 30vw;
+  min-width: 240px;
+  margin: 3vh auto 2vh auto;
+  background: #fff;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  font-family: "Montserrat", sans-serif;
+}
+
+.search input {
+  width: 90%;
+  height: 20px;
+  border: none;
+  padding: 15px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+}
+
+.search button {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  background: #0aa1dd;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 56px;
+  height: 42px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+.search button:hover {
+  opacity: 0.85;
+}
+
+/* City Title */
+.city-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+.city {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .city h3 {
   text-align: center;
   font-size: 2em;
   font-family: "Montserrat", sans-serif;
-  position: relative;
 }
 
-.city a {
+.icon-container {
   position: absolute;
+  right: -80px;
+  top: -20px;
 }
 
+.icon {
+  width: 80px;
+}
+
+/* Temperature */
 .row {
   margin: 3vh 0;
   display: flex;
@@ -31,17 +95,17 @@
   flex: 50%;
 }
 
+.other-info p {
+  text-align: center;
+  font-size: 1.5em;
+}
 
 .temp p {
   font-size: 2.5em;
   text-align: center;
 }
 
-.other-info p {
-  text-align: center;
-  font-size: 1.5em;
-}
-
+/* Additional Info */
 .rowBottom {
   display: flex;
   margin: 2vh 0;
@@ -52,57 +116,7 @@
   text-align: center;
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center;
-}
-
-.icon {
-  width: 70px;
-}
-
-.search {
-  position: relative;
-  max-width: 30vw;
-  min-width: 280px;
-  margin: 30px auto 20px auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
-  font-family: "Montserrat", sans-serif;
-}
-
-.search input {
-  width: 90%;
-  height: 20px;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2em;
-  font-family: inherit;
-}
-
-.search button {
-  position: absolute;
-  right: 0;
-  top: -4px;
-  background: #0aa1dd;
-  color: #fff;
-  border: none;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  width: 56px;
-  height: 58px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-}
-
-.search button:hover {
-  opacity: 0.85;
-}
-
+/* Loading and Error */
 .loading p {
   text-align: center;
   color: rgb(169, 174, 179);
@@ -111,4 +125,52 @@
 .error p {
   text-align: center;
   color: rgb(249, 91, 91);
+}
+
+@media only screen and (max-width: 575px) {
+  .container {
+    max-width: 100vw;
+  }
+
+  .search {
+    padding: 3px;
+    margin-top: 1vh;
+  }
+
+  .search input {
+    height: 5px;
+  }
+
+  .search button {
+    height: 40px;
+  }
+
+  .city-container {
+    height: 80px;
+  }
+
+  .city h3 {
+    font-size: 1.7em;
+  }
+
+  .row {
+    margin-top: 0;
+  }
+
+  .other-info p {
+    font-size: 1em;
+    margin-top: 3px;
+  }
+
+  .rowBottom {
+    margin: 0 0;
+  }
+
+  .col2 img {
+    width: 28px;
+  }
+
+  .col2 p {
+    font-size: 0.8em;
+  }
 }

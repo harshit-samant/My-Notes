@@ -13,6 +13,24 @@
 }
 
 /* Search */
+.change {
+  position: absolute;
+  bottom: 5px;
+}
+
+.fake-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.fake-link:active {
+  color: red;
+}
+
 .search {
   position: relative;
   max-width: 30vw;
@@ -61,6 +79,7 @@
   justify-content: center;
   align-items: center;
   height: 90px;
+  position: relative;
 }
 .city {
   position: relative;
@@ -172,5 +191,13 @@
 
   .col2 p {
     font-size: 0.8em;
+  }
+
+  .change {
+    bottom: 10px;
+  }
+
+  .fake-link {
+    font-size: 13px;
   }
 }

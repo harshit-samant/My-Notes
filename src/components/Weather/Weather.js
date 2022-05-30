@@ -1,18 +1,28 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Weather.css";
 
+let city = "";
+
 const weatherAPI = {
   key: "e4a6985b0b5f3d004724386087d80863",
   // key: "f1dc56e4d3b6fcf093246c3ea9170392",
   baseURL: "https://api.openweathermap.org/data/2.5/weather",
 };
 
+const getCity = () => {
+  if(localStorage.getItem("city")){
+    city = localStorage.getItem("city");
+  } else {
+    city = "DELHI";
+  }
+}
+
 const Weather = () => {
-  const city = "BHIMTAL";
   const [enteredCity, setEnteredCity] = useState("");
   const [weather, setWeather] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
 
   const cityChangeHandler = (event) => {
     setEnteredCity(event.target.value.toUpperCase());
@@ -50,13 +60,17 @@ const Weather = () => {
       });
 
       setIsLoading(false);
+      localStorage.setItem("city" , city);
     } catch (error) {
       setError(error.message);
     }
     setIsLoading(false);
+    setShowSearch(false);
+    setEnteredCity("");
   }, []);
 
   useEffect(() => {
+    getCity();
     fetchWeatherHandler(city);
   }, [fetchWeatherHandler]);
 
@@ -66,6 +80,12 @@ const Weather = () => {
 
     fetchWeatherHandler(enteredCity);
     console.log(weather);
+  };
+
+  const changeClickHandler = () => {
+    setShowSearch((prev) => {
+      return !prev;
+    });
   };
 
   const loading = (
@@ -80,14 +100,18 @@ const Weather = () => {
     </div>
   );
 
+  const searchForm = (
+    <form className="search" onSubmit={submitHandler}>
+      <input type="text" onChange={cityChangeHandler} value={enteredCity}/>
+      <button type="submit">Change</button>
+    </form>
+  );
+
   return (
     <React.Fragment>
       <div className="weather">
         <div className="container">
-          <form className="search" onSubmit={submitHandler}>
-            <input type="text" onChange={cityChangeHandler} />
-            <button type="submit">Change</button>
-          </form>
+          {showSearch && searchForm}
           {isLoading && !error && loading}
           {error && errorSection}
           <div className="city-container">
@@ -96,6 +120,11 @@ const Weather = () => {
               <div className="icon-container">
                 <img className="icon" src={weather.src} alt="icon"></img>
               </div>
+            </div>
+            <div className="change">
+              <button className="fake-link" onClick={changeClickHandler}>
+                Change
+              </button>
             </div>
           </div>
           <div className="row">
